@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador</title>
+</head>
+<body>
+    <button onclick="comenzarTiempo()" >Alarma</button>
+    <script>
+        function comenzarTiempo(){
+            setTimeout(tiempoCumplido,1000*5);
+        }
+        function tiempoCumplido(){
+            alert("Se acabo el tiempo!!");
+        }
+    </script>
+</body>
+</html>

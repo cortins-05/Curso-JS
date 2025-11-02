@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador</title>
+    <link rel="stylesheet" href="misEstilos.css">
+</head>
+<body>
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()" >Alarma</button>
+    <h1 id="textoAlarma">00:00:00</h1>
+
+    <script>
+        let elementoSegundos = document.getElementById('tiempoElegido');
+        let elementoTextoAlarma = document.getElementById('textoAlarma');
+        let elementoSonidoAlarma = document.getElementById('audioAlarma');
+
+        function comenzarReloj(){
+            setInterval(tictac,1000);
+        }
+
+        function tictac(){
+            let tiempoActual = new Date();
+            let hora = tiempoActual.getHours();
+            let minutos = tiempoActual.getMinutes();
+            let segundos = String(tiempoActual.getSeconds()).padStart(2,"0");
+
+            let textoHora = hora + ":" + minutos + ":" + segundos;
+            elementoTextoAlarma.textContent = textoHora;
+        }
+
+        comenzarReloj();
+    </script>
+</body>
+</html>

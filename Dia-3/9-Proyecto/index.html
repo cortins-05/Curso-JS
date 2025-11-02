@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <style>
+        #cuentaAtras{
+            position: absolute;
+            right: 40px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body onload="comienzo()">
+    <p>Pregunta 1: ¿Cuál es el color del cielo en un día despejado?</p>
+    <input type="text" id="pregunta1">
+    <p>Pregunta 2: ¿Cuántas patas tiene un perro?</p>
+    <input type="number" id="pregunta2">
+    <p>Pregunta 3: ¿En qué estación suele hacer más calor?</p>
+    <input type="text" id="pregunta3">
+    <p>Pregunta 4: ¿Qué planeta es conocido como el “planeta rojo”?</p>
+    <input type="text" id="pregunta4">
+    <p>Pregunta 5: ¿Cuántos días tiene una semana?</p>
+    <input type="number" id="pregunta5">
+    <br>
+    <button onclick="comprobar()" >Comprobar</button>
+
+    <h1 id="cuentaAtras" ></h1>
+
+    <script>
+        var band = false;
+        function comprobar(){
+            let pregunta1= document.getElementById('pregunta1').value;
+            let pregunta2= document.getElementById('pregunta2').value;
+            let pregunta3= document.getElementById('pregunta3').value;
+            let pregunta4= document.getElementById('pregunta4').value;
+            let pregunta5= document.getElementById('pregunta5').value;
+            if(pregunta1 && pregunta2 && pregunta3 && pregunta4 && pregunta5){
+                alert('Ganaste!!!');
+                band = true;
+                location.reload();
+            }
+        }
+
+        function acabar(){
+            alert("Perdiste");
+            location.reload();
+        }
+
+        function comienzo(){
+            temporizador();
+        }
+
+        function temporizador(){
+            let crono = document.getElementById('cuentaAtras');
+            let tiempo = 31;
+            setInterval(()=>{
+                if(!band){
+                    tiempo--;
+                }
+                crono.textContent = tiempo + " seg";
+                if(tiempo<=0){
+                    acabar();
+                }
+            },1000)
+        }
+    </script>
+</body>
+</html>
