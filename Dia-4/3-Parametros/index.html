@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return</title>
+</head>
+<body>
+    <p>Primer numero</p>
+    <input type="number" id="primerNumero">
+    <p>Segundo numero</p>
+    <input type="number" id="segundoNumero"> <br>
+    <button onclick="mostrarResultado()">Calcular</button>
+    <h2 id="textoResultado"></h2>
+    <script>
+        function sumar(numero1, numero2){
+            resultado = +numero1 + +numero2;
+            return resultado;
+        }
+        function mostrarResultado(){
+            let numero1 = document.getElementById('primerNumero');
+            let numero2 = document.getElementById('segundoNumero');
+            let elementoTexto = document.getElementById('textoResultado');
+            let elementoSuma = sumar(numero1.value,numero2.value);
+            elementoTexto.textContent = elementoSuma;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break y continue</title>
+</head>
+<body>
+    <script>
+        let array1 = [1,5,24,95,11,10,62,15,9];
+        for(let numero of array1){
+            if(numero<50){
+                document.write(numero+"<br>");
+            }else{
+                continue;
+                document.write('Numero mayor a 50'); //Nunca lo va a mostrar
+            }
+        }
+
+        document.write('Eso es todo');
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+</head>
+<body>
+    <button onclick="mostrar()" >Mostrar notas</button><br>
+    <button onclick="promedio()">Calcular Promedio</button><br>
+    <button onclick="mayor()">Nota mas alta</button><br>
+    <button onclick="hayAplazo()">Aplazos</button><br>
+
+    <ul id="lista"></ul>
+
+    <script>
+        let calificaciones = [9.5, 4, 5.3, 2, 7.2];
+
+        function mostrar(){
+            let lista = document.getElementById('lista');
+            for(let calificacion of calificaciones){
+                let elemento = document.createElement('li');
+                elemento.innerText = calificacion;
+                lista.appendChild(elemento);
+            }
+        }
+
+        function promedio(){
+            let suma=0;
+            for(let x=0;x<calificaciones.length;x++){
+                suma+=calificaciones[x];
+            }
+            prom = suma/calificaciones.length;
+            let elemento = document.createElement('h1');
+            elemento.innerText = 'El promedio es '+prom;
+            document.body.appendChild(elemento);
+            
+        }
+
+        function mayor(){
+            let notaAlta = 0;
+            i=0;
+            while(i<5){
+                if(calificaciones[i]>notaAlta) notaAlta = calificaciones[i];
+                i++;
+            }
+            let elemento = document.createElement('h1');
+            elemento.innerText = 'La nota mas alta es '+notaAlta;
+            document.body.appendChild(elemento);
+        }
+
+        function hayAplazo(){
+            for(nota of calificaciones){
+                if(nota<5){
+                    let elemento = document.createElement('h6');
+                    elemento.innerText = "Suspenso no hay aplazo";
+                    document.body.appendChild(elemento);
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

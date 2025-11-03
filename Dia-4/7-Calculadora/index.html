@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        input{
+            border-radius: 20px;
+            border: 3px solid blue;
+            padding: 5px;
+        }
+        #resultado{
+            border: 3px solid blue;
+            border-radius: 20px;
+            width: 19%;
+            height: 40px;
+            padding: 5px;
+        }
+        p{
+            display: flex;
+            max-width: 19%;
+            gap: 10px;
+        }
+        button{
+            flex: 1;
+            font-weight: bolder;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="numero1">
+    <input type="number" id="numero2">
+    <p><button onclick="sumar()">+</button> <button onclick="restar()">-</button> <button onclick="multiplicar()">X</button> <button onclick="dividir()">/</button></p>
+    <p><button onclick="potencia()" >potencia</button> <button onclick="raiz()">raiz</button></p>
+    <p><button onclick="absoluto()">absoluto</button> <button onclick="random()">random</button></p>
+    <br>
+    <div id="resultado"></div>
+    <script>
+        var numero1 = document.getElementById('numero1');
+        var numero2 = document.getElementById('numero2');
+        var resultado = document.getElementById('resultado');
+
+        function sumar(){
+            resultado.textContent = +numero1.value + +numero2.value;
+        }
+        function restar(){
+            resultado.textContent = +numero1.value - +numero2.value;
+        }
+        function multiplicar(){
+            resultado.textContent = +numero1.value * +numero2.value;
+        }
+        function dividir(){
+            resultado.textContent = +numero1.value / +numero2.value;
+        }
+        function potencia(){
+            resultado.textContent = Math.pow(+numero1.value,+numero2.value);
+        }
+        function raiz(){
+            resultado.textContent = Math.pow(+numero1.value,1/+numero2.value)
+        }
+        function absoluto(){
+            resultado.textContent = Math.ceil(numero1);
+        }
+        function random(){
+            resultado.textContent = Math.floor(Math.random()*(+numero2.value - +numero1.value)+ +numero1.value);
+        }
+
+
+    </script>
+</body>
+</html>
