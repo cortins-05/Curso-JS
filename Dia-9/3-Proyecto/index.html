@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+</head>
+<body>
+
+    <div id="registros"></div>
+    <button onclick="verRegistros()">Ver registros</button>
+    
+    <script>
+        function Automovil(marca, modelo, color, anio, titular){
+            this.marca = marca;
+            this.modelo = modelo;
+            this.color = color;
+            this.anio = anio;
+            this.titular = titular;
+        }
+
+        let auto1 = new Automovil("Toyota", "Corolla", "Rojo", 2020, "Lucas");
+        let auto2 = new Automovil("Ford", "Focus", "Azul", 2018, "María");
+        let auto3 = new Automovil("Tesla", "Model 3", "Blanco", 2023, "Carlos");
+
+        Automovil.prototype.venderAutomovil = function(titular){
+            this.titular = titular;
+            console.log("Titular actualizado con exito")            
+        }
+        Automovil.prototype.verAuto = function(){
+            let frase = "";
+            frase += "AUTOMOVIL: ";
+            frase += this.marca + " ";
+            frase += this.modelo + " ";
+            frase += this.color + " ";
+            frase += this.anio + " ";
+            frase += this.titular + "<br>";
+            return frase;
+        }
+        Automovil.prototype.encender = function(){
+            alert("Automovil "+this.marca+" encendido");
+        }
+
+        function verRegistros(){
+            let div = document.getElementById('registros');
+            div.innerHTML = auto1.verAuto();
+            div.innerHTML += auto2.verAuto();
+            div.innerHTML += auto3.verAuto();
+        }
+        
+    </script>
+</body>
+</html>

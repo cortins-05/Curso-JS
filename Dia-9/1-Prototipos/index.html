@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipos</title>
+</head>
+<body>
+    <script>
+        function Libro(autor,titulo,cantPaginas){
+            this.autor = autor;
+            this.titulo = titulo;
+            this.cantPaginas = cantPaginas;
+        }
+
+        let libro1 = new Libro('Stephen King', 'Carrie', 524);
+        
+        console.log(Libro.prototype);
+    </script>
+</body>
+</html>
