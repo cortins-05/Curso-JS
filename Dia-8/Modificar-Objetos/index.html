@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Objeto</title>
+</head>
+<body>
+    <script>
+        let perro = {
+            nombre:'Simba',
+            raza : 'Pitbull',
+            edad: 4,
+            ladrar(){
+                console.log('Guau');
+            }
+        }
+        perro.edad = 10;
+        function cumplirAnios(){
+            perro.edad +=1;
+        }
+
+        perro["colorOjos"] = 'Marron';
+    </script>
+</body>
+</html>

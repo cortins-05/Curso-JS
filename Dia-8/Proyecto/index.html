@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+</head>
+<body>
+    <h1>Registro de empleados</h1>
+    <hr>
+    <label for="legajo">Legajo</label>
+    <input type="text" id="legajo"> <br>
+    <label for="nombre">Nombre</label>
+    <input type="text" name="" id="nombre"> <br>
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido"> <br>
+    <label for="fecha">Fecha de nacimiento</label>
+    <input type="date" name="" id="fecha"> <br>
+    <label for="cargo">Cargo</label>
+    <input type="text" name="" id="cargo"> <br>
+    <button onclick="guardar()" >Cargar empleado</button>
+    <br>
+    <button onclick="mostrar()" >Mostrar empleados</button>
+    <script>
+        var empleados = [];
+
+        function Empleado(legajo,nombre,apellido,fecha,cargo){
+            this.legajo = legajo;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.fecha = fecha;
+            this.cargo = cargo;
+            this.guardar = function guardar(){
+                empleados.push(this);
+            }
+        }
+
+        function guardar(){
+            let legajo = document.getElementById('legajo');
+            let legajo_value = legajo.value;
+
+            let nombre = document.getElementById('nombre');
+            let nombre_value = nombre.value;
+
+            let apellido = document.getElementById('apellido');
+            let apellido_value = apellido.value;
+
+            let fecha = document.getElementById('fecha');
+            let fecha_value = fecha.value;
+
+            let cargo = document.getElementById('cargo');
+            let cargo_value = cargo.value;
+
+            new Empleado(legajo_value,nombre_value,apellido_value,fecha_value,cargo_value).guardar();
+        }
+
+        function mostrar(){
+            for(let empleado of empleados){
+                for(let caracteristica in empleado){
+                    let parrafo = document.createElement("p");
+                    parrafo.innerText = caracteristica+": "+empleado[caracteristica];
+                    document.body.appendChild(parrafo);
+                }
+                let elemento = document.createElement("br");
+                document.body.appendChild(elemento);
+                document.body.appendChild(elemento);
+            }
+        }
+
+
+    </script>
+</body>
+</html>
