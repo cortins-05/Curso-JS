@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+</head>
+<body>
+    <script>
+
+        let PapelZ = new Papel(4,3); //No funciona al ser antes
+
+        class Papel{
+            constructor(alto, ancho){
+                this.alto = alto;
+                this.ancho = ancho; 
+            }
+        }
+
+        let miPapel = Papel(4,5);
+
+        let PapelA = class{
+            constructor(alto,ancho){
+                this.alto = alto;
+                this.ancho = ancho;
+            }
+        }
+        
+        let Papel33 = new PapelA(3,4);
+
+        let PapelB = class PapelX{
+            constructor(alto,ancho){
+                this.alto = alto;
+                this.ancho = ancho;
+            }
+        }
+
+        console.log(PapelB.name);
+    </script>
+</body>
+</html>

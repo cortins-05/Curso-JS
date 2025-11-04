@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subclases</title>
+</head>
+<body>
+    <script>
+        class Deportista{
+            constructor(nombre,apellidos){
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+            }
+        }
+
+        class Futbolista extends Deportista{
+            constructor(nombre,apellidos,goles){
+                super(nombre,apellidos);
+                this._goles = goles;
+            }
+
+            get goles(){
+                return this._goles;
+            }
+
+            set goles(nuevoGoles){
+                this._goles = nuevoGoles;
+            }
+        }
+
+        let deportista1 = new Deportista('Gustavo','Escobar');
+        console.log(deportista1.apellidos);
+
+        let futbolista1 = new Futbolista('Federico',"Garay",5);
+        console.log(futbolista1.nombre);
+        console.log(futbolista1.goles);
+        
+    </script>
+</body>
+</html>
