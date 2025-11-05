@@ -1,0 +1,9 @@
+{
+    "nombre": "Lucas",
+    "nCuenta": 123456789,
+    "saldo": {
+        "USD": 200,
+        "EUR": 195
+    },
+    "CBU": 2005
+}

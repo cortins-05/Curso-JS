@@ -9,19 +9,15 @@
     <div id="nombre"></div>
     <script>
         let datosJson;
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET','persona.json',true);
-        xhr.responseType = 'json';
-        xhr.onload = function(){
-            if(xhr.status == 200){
-                datosJson = xhr.response;
-                let elementoTexto = document.getElementById('nombre');
-                elementoTexto.textContent = datosJson.nombre;   
-            }else{
-                console.log('No se ha cargado el JSON')
-            }
-        }
-        xhr.send();
+        fetch('persona.json')
+        .then(res=>res.json())
+        .then((salida)=>{
+            datosJson=salida;
+            let elementoTexto = document.getElementById('nombre');
+            elementoTexto.textContent = datosJson.nombre;
+        });
+
+
     </script>
 </body>
 </html>

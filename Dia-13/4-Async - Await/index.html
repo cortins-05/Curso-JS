@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promesas</title>
+</head>
+<body>
+    <script>
+        async function obtenerDatos(){
+            console.log('Este codigo esta al comienzo');
+            //let respuestaGasolina = await fetch('https://api.datos.gob.mx/v1/precio.gasolina.publico')
+            //let datosGasolina = await respuesta.json();
+
+            let respuestaDolar = await fetch('https://open.er-api.com/v6/latest/USD');
+            console.log('Este codigo esta al medio');
+            let datosDolar = await respuestaDolar.json();
+
+            console.log(datosDolar);
+        }
+
+        obtenerDatos();
+        console.log("El codigo sigue");
+    </script>
+</body>
+</html>

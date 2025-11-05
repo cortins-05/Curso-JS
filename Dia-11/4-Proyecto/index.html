@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Springfield</title>
+</head>
+<body>
+    <h1>Banco de Springfield</h1>
+    <h2>Springfield, IL</h2>
+    <div id="datos">
+
+    </div>
+    <script>
+        function isIterable(value) {
+            return value != null && typeof value[Symbol.iterator] === 'function';
+        }
+
+        let datos = document.getElementById('datos');
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET','cliente.json',true);
+        xhr.responseType = 'json';
+        xhr.onload = function(){
+            if(xhr.status == 200){
+                datosJson = xhr.response;
+                for(let clave in datosJson){
+                    if(typeof datosJson[clave]=="object"){
+                        for(let clave2 in datosJson[clave]){
+                            let parrafo = document.createElement('p');
+                            parrafo.textContent = clave + ' => ' + clave2 + ' => ' + datosJson[clave][clave2];
+                            datos.appendChild(parrafo);
+                        }
+                    }else{
+                        let parrafo = document.createElement('p');
+                        parrafo.textContent = clave + ' => ' + datosJson[clave];
+                        datos.appendChild(parrafo);
+                    }
+                }
+            }
+        }
+        xhr.send();
+    </script>
+</body>
+</html>
