@@ -1,0 +1,13 @@
+button{
+    background-color: blueviolet;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+label{
+    font-size: 30px;
+    font-weight: bold;
+}

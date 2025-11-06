@@ -1,0 +1,16 @@
+#contenedorDispositivos{
+    height: 300px;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: chartreuse;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#contenedorDispositivos ul{
+    background-color: red;
+    color: white;
+    border: 3px solid black;
+}
