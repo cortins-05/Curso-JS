@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodo 1</title>
+</head>
+<body>
+
+    <div id="salida"></div>
+
+    <script>
+        let salida = document.getElementById('salida');
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET','peliculas.json',true);
+        xhr.responseType = 'json';
+        xhr.onload = function(){
+            if(xhr.status==200){
+                for(let clave in xhr.response){
+                    let div = document.createElement("div");
+                    let h1 = document.createElement("h1");
+                    let p = document.createElement("p");
+                    h1.textContent = "Nombre: " + xhr.response[clave].nombre;
+                    p.textContent = "Descripcion: " + xhr.response[clave].descripcion;
+                    div.appendChild(h1);
+                    div.appendChild(p);
+                    salida.appendChild(div);
+                }
+            }
+        };
+        xhr.send();
+        
+    </script>
+
+</body>
+</html>

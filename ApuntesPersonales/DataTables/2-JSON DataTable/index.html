@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON DataTable</title>
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="../0-Archivos/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../0-Archivos/dataTables.dataTables.css">
+
+    <link rel="stylesheet" href="../0-Archivos/dataTables.bootstrap5.min.css">
+</head>
+<body onload="crearTabla()">
+    
+    <div class="container">
+        <div class="row text-center mt-4 mb-4">
+            <h1>Añadir datos al JSON y mostrar en la tabla</h1>
+        </div>
+        <div class="row gap-6">
+            <div class="col-6 p-5 d-flex flex-column gap-3 border border-4 rounded border-success">
+                <input type="text" class="form-control" required placeholder="Nombre..." id="inputNombre">
+                
+                <input type="text" class="form-control" required placeholder="Position..." id="inputPosition">
+                
+                <input type="text" class="form-control" required placeholder="Office..." id="inputOffice">
+
+                <input type="number" placeholder="Age..." required class="form-control" id="inputAño">
+
+                <input type="date" class="form-control" required placeholder="Start date..." id="inputDate">
+
+                <input type="number" class="form-control" required placeholder="Salary..." id="inputSalary">
+
+                <button onclick="enviar()" class="btn btn-primary">Enviar Nuevo</button>
+            </div>
+            <div class="col-6 border border-4 rounded border-primary">
+                <table id="miTabla" class="table table-striped"></table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../0-Archivos/jquery-3.7.1.js"></script>
+
+    <script src="../0-Archivos/bootstrap.bundle.min.js"></script>
+
+    <script src="../0-Archivos/dataTables.js"></script>
+
+    <script src="../0-Archivos/dataTables.bootstrap5.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

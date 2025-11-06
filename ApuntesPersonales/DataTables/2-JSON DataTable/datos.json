@@ -1,0 +1,8 @@
+{
+    "header":["name","position","office","age","start date","salary"],
+    "body":{
+        "0":["Airi Satou","Accountant","Tokyo",33,"2008-11-28","$162,700"],
+        "1":["Angelica Ramos","Chief Executive Officer (CEO)","London",47,"2009-10-09","$1,200,000"],
+        "2":["Ashton Cox","Junior Technical Author","San Francisco",66,"2009-01-12","$86,000"]
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodo 2</title>
+    <style>
+        .epa{
+            background-color: bisque;
+            max-width: 20%;
+            border: 5px solid black;
+            margin: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="salida"></div>
+
+    <script>
+        let salida = document.getElementById('salida');
+        
+        fetch('peliculas.json')
+        .then(respuesta => respuesta.json())
+        .then(datos=>{
+            for(let dato of datos){
+                let div = document.createElement("div");
+                div.className = "epa"
+                let h1 = document.createElement("h1");
+                let p = document.createElement("p");
+                h1.textContent = "Nombre: " + dato.nombre;
+                p.textContent = "Descripcion: " + dato.descripcion;
+                div.appendChild(h1);
+                div.appendChild(p);
+                salida.appendChild(div);
+            }
+        })
+
+    </script>
+
+</body>
+</html>
